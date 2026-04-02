@@ -1,0 +1,17 @@
+#include <stdio.h>
+
+int main() {
+    int arr[] = {5, 7, 1, 9, 4, 6};
+    int n = sizeof(arr) / sizeof(arr[0]);
+
+    for (int i = 0; i < n - 1; i++) {
+        int* addr = &arr[i];
+        int* addr_next = &arr[i + 1];
+
+        printf("address of arr[%d]: %p\n", i, (void*)addr);
+        printf("address of arr[%d]: %p\n", i + 1, (void*)addr_next);
+        printf("diff: %td\n\n", addr_next - addr);
+    }
+
+    return 0;
+}
